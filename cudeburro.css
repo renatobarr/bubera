@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat black';
+    background-color: #1f1f1ff8;
+}
+
+.cabeçudo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ca7900f8;
+    color: #1f1f1ff8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 5px 2px 15px #1f1f1ff8;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.texto-cabeçudo{
+    text-align: center;
+    
+}
+
+
