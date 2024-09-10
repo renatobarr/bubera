@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Cor padrão */
+    transition: background-image 0.5s ease;
+  }
+  
+  body.background-active {
+    background-image: url('imagens/pexels-arindam-2213575.jpg'); /* Caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+  }
+  

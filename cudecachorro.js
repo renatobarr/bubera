@@ -5,6 +5,10 @@ function teste(){
     void button.offsetWidth;
     button.classList.add('pulse');
 
+    setTimeout(function() {
+        window.location.href = 'amostradinho.html'; 
+    }, 300);
+
     
 }
 
