@@ -1,30 +1,40 @@
 const body = document.body;
+const message = document.getElementById('message');
+const centerImage = document.getElementById('center-image');
 let timeout;
 
-  document.addEventListener('mousemove', (event) => {
+// Função para verificar se o mouse está no centro
+function isMouseInCenter(mouseX, mouseY, tolerance = 50) {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
 
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    clearTimeout(timeout);
-    document.getElementById('message').textContent = "Pare o mouse em algum lugar";
+  return (
+    mouseX > (windowWidth / 2 - tolerance) &&
+    mouseX < (windowWidth / 2 + tolerance) &&
+    mouseY > (windowHeight / 2 - tolerance) &&
+    mouseY < (windowHeight / 2 + tolerance)
+  );
+}
 
-    timeout = setTimeout(() => {
-      document.getElementById('message').textContent = "";
+// Evento de movimento do mouse
+document.addEventListener('mousemove', (event) => {
+  clearTimeout(timeout);
+  message.textContent = "Pare o mouse em algum lugar";
+  centerImage.style.display = "none"; // Oculta a imagem quando o mouse está se movendo
+  body.classList.remove('background-active'); // Remove o fundo ativo enquanto o mouse se move
 
-      const mouseX = event.clientX;
-      const mouseY = event.clientY;
-      
-      const tolerance = 50; 
-      const isInCenter = 
-        mouseX > (windowWidth / 2 - tolerance) && 
-        mouseX < (windowWidth / 2 + tolerance) &&
-        mouseY > (windowHeight / 2 - tolerance) && 
-        mouseY < (windowHeight / 2 + tolerance);
-      }, 500);
+  // Define um timeout para ocultar a mensagem quando o mouse parar
+  timeout = setTimeout(() => {
+    message.textContent = "";
 
-      if (isInCenter) {
-        body.classList.add('background-active'); 
-      } else {
-        body.classList.remove('background-active'); 
-      }
-  });
+    // Verifica se o mouse está no centro e ativa a imagem e o fundo
+    const isInCenter = isMouseInCenter(event.clientX, event.clientY);
+    if (isInCenter) {
+      centerImage.style.display = "block"; // Exibe a imagem
+      body.classList.add('background-active'); // Ativa o fundo com a imagem
+    } else {
+      centerImage.style.display = "none"; // Oculta a imagem se não estiver no centro
+      body.classList.remove('background-active'); // Remove o fundo com a imagem
+    }
+  }, 500); // Tempo em milissegundos para considerar que o mouse "parou"
+});

@@ -1,26 +1,37 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white; 
-    transition: background-image 0.5s ease;
-  }
-  
-  body.background-active {
-    height: 100vh;
-    margin: 0; 
-    background-image: url('imagens/pexels-arindam-2213575.jpg'); 
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white; 
+  transition: background-image 0.5s ease;
 }
 
-  #message {
-    font-size: 24px;
-    color: #333;
-  }
-  
+body.background-active {
+  background-image: url('imagens/pexels-arindam-2213575.jpg'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+}
+
+#message {
+  font-size: 24px;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#center-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 300px;
+  display: none; /* Oculta a imagem inicialmente */
+}
