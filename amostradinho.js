@@ -1,24 +1,30 @@
 const body = document.body;
+let timeout;
 
-document.addEventListener('mousemove', (event) => {
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
-  
-  // Posição do mouse
-  const mouseX = event.clientX;
-  const mouseY = event.clientY;
+  document.addEventListener('mousemove', (event) => {
 
-  // Verifica se o mouse está no centro (ajustar conforme necessário)
-  const tolerance = 50; // margem de tolerância ao centro
-  const isInCenter = 
-    mouseX > (windowWidth / 2 - tolerance) && 
-    mouseX < (windowWidth / 2 + tolerance) &&
-    mouseY > (windowHeight / 2 - tolerance) && 
-    mouseY < (windowHeight / 2 + tolerance);
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    clearTimeout(timeout);
+    document.getElementById('message').textContent = "Pare o mouse em algum lugar";
 
-  if (isInCenter) {
-    body.classList.add('background-active'); // Adiciona a imagem de fundo
-  } else {
-    body.classList.remove('background-active'); // Remove a imagem de fundo
-  }
-});
+    timeout = setTimeout(() => {
+      document.getElementById('message').textContent = "";
+
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+      
+      const tolerance = 50; 
+      const isInCenter = 
+        mouseX > (windowWidth / 2 - tolerance) && 
+        mouseX < (windowWidth / 2 + tolerance) &&
+        mouseY > (windowHeight / 2 - tolerance) && 
+        mouseY < (windowHeight / 2 + tolerance);
+      }, 500);
+
+      if (isInCenter) {
+        body.classList.add('background-active'); 
+      } else {
+        body.classList.remove('background-active'); 
+      }
+  });
