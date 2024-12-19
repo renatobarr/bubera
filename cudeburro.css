@@ -4,22 +4,22 @@ body {
     height: 100vh;
     position:relative;
     background-color: #1f1f1ff8;
-    background-image: url(imagens/Sem\ título.png);
+    background-image: url(imagens/center.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
 
-.cabeçudo{
-
-    height: 77vh;
-    width: 165vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.cabeçudo {
+    width: 50vw; /* Ajuste a largura para caber na tela */
+    height: 100vh; /* Altura igual à altura da tela */
+    display: flex; /* Usado para ativar o Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin: 0 auto; /* Garante centralização adicional se necessário */
 }
+
 
 button {
     
