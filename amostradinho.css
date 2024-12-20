@@ -1,16 +1,17 @@
 body {
   margin: 0;
-  padding: 0;
+  width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white; 
-  transition: background-image 0.5s ease;
+  position:relative;
+  background-color: #1f1f1ff8;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 body.background-active {
-  background-image: url('imagens/pexels-arindam-2213575.jpg'); 
+  background-image: url('imagens/centro.png'); 
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat; 
@@ -19,7 +20,9 @@ body.background-active {
 
 #message {
   font-size: 24px;
-  color: #333;
+  color: #01b224f8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
   position: absolute;
   top: 50%;
   left: 50%;

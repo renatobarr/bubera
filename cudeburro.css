@@ -4,7 +4,7 @@ body {
     height: 100vh;
     position:relative;
     background-color: #1f1f1ff8;
-    background-image: url(imagens/center.jpg);
+    background-image: url(imagens/centro.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -23,9 +23,9 @@ body {
 
 button {
     
-    background-color: #ca7900f8;
+    background-color: #01b224f8;
     color: #1f1f1ff8;
-    box-shadow: 1px 1px 5px #ca7900f8;
+    box-shadow: 1px 1px 5px #01b224f8;
     padding: 20px;
     border-radius: 30px;
     text-align: center;
